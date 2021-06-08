@@ -1,0 +1,11 @@
+.sfdx/
+.vscode/
+prod/config
+dev/config
+.DS_Store
+.apex/
+.idea/
+packages/
+force-app/main/default/package.xml
+salesforce_code.iml
+export_data/

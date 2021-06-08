@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# import configs
+. prod/config
+
+# import source from namespace
+sfdx force:mdapi:retrieve -r ./ -u $username -k manifest/package.xml
+unzip unpackaged.zip -d tmp_source
+sfdx force:mdapi:convert -r ./tmp_source -d ./force-app
+rm -r tmp_source
+rm unpackaged.zip

@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+
+# import configs
+. server/config
+
+status="succeeded"
+
+# deploy to namespace
+sfdx force:source:convert -d ./tmp_deploy
+
+{
+  sfdx force:mdapi:deploy -u $username -d ./tmp_deploy -w -1
+} || {
+  status="failed"
+}
+
+rm -r tmp_deploy

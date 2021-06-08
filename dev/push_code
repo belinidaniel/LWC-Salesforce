@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+# import configs
+. dev/config
+
+sfdx force:source:deploy -p ./force-app/main/default/classes,./force-app/main/default/triggers,./force-app/main/default/pages -u $username

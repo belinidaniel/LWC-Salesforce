@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# TOME CUIDADO AO UTILIZAR ESTE SCRIPT!!
+# Os arquivos dup substituirão os atuais.
+# Primeiro commitar as alterações e depois executar este script
+for file in $(find . -name "*.dup" -type f)
+do 
+    mv -- "$file" "${file%%.dup}"
+done

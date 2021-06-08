@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# import configs
+. dev/config
+
+className=$1
+
+sfdx force:apex:class:create -n $className -d force-app/main/default/classes/

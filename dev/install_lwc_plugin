@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+sfdx plugins:install @salesforce/lwc-dev-server

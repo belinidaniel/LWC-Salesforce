@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# import configs
+. dev/config
+
+sfdx force:auth:web:login -r https://test.salesforce.com -a $alias --setdefaultusername --setdefaultdevhubusername
+sfdx force:config:set defaultdevhubusername=$username
+#sfdx force:org:create -f config/project-scratch-def.json -a $alias
